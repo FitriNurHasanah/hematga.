@@ -695,3 +695,34 @@ main > section > h1 {
   outline-offset: 4px;
   border-radius: 16px;
 }
+
+/* Latar */
+body {
+  background:
+    radial-gradient(circle at 10% 0%, #ffe3cc 0, transparent 40%),
+    radial-gradient(circle at 90% 100%, #ffd9a8 0, transparent 40%),
+    var(--latar);
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+h1 span {
+  color: var(--utama);
+}
+
+.form {
+  border: 2px solid #1f1a14;
+  box-shadow: 6px 6px 0 #1f1a14;
+}
+
+#btn-hitung {
+  border: 2px solid #1f1a14;
+  box-shadow: 4px 4px 0 #1f1a14;
+}
+#btn-hitung:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #1f1a14;
+}
