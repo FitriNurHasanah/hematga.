@@ -159,7 +159,7 @@ btnHitung.addEventListener("click", function () {
   pesanError.textContent = "";
   struk.innerHTML = "";
   if (harga <= 0) {
-    pesanError.textContent = "Isi harga barangnya yang bener dong";
+    pesanError.textContent = "Isi yang bener dong";
     return;
   }
   if (diskon < 0 || voucher < 0) {
@@ -268,7 +268,7 @@ function bacaKartu(kode) {
   const jenis = jenisAdu[kode];
   const nama = "Penawaran " + kode.toUpperCase();
 
-  if (harga <= 0) return { error: nama + ": isi harga dulu ya." };
+  if (harga <= 0) return { error: nama + ": isi dulu yaa." };
   if (diskon < 0 || voucher < 0) return { error: nama + ": angka tidak boleh negatif." };
   if (jenis === "persen" && diskon > 100) return { error: nama + ": diskon persen maksimal 100." };
   if (jenis === "rupiah" && diskon > harga) return { error: nama + ": diskon Rp tidak boleh lebih besar dari harga." };
