@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HematGa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#kalkulator" class="logo">HematGa</a>
+        <!-- Menu -->
+        <button id="btn-menu" aria-label="Buka menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+        </button>
+        <nav id="menu">
+            <a href="#kalkulator">Kalkulator Hemat</a>
+            <a href="#adu">Adu Penawaran</a>
+            <a href="#tips">Tips Hemat</a>
+            <a href="#tentang">Tentang Pembuat</a>
+        </nav>
+    </header>
+
+    <!-- Main -->
+     <main>
+        <section id="kalkulator">
+            <h1>Hitung Diskon</h1>
+            <p>Masukkan harga dan diskon</p>
+
+             <div class="form">
+                <label for="harga">Harga barang (Rp)</label>
+                <input type="number" id="harga" placeholder="contoh: 200000">
+
+                <label for="diskon">Diskon (%) / (Rp)</label>
+                <div class="baris-diskon">
+                    <input type="number" id="diskon" placeholder="contoh: 30">
+                    <button type="button" id="btn-persen" class="toggle aktif">%</button>
+                    <button type="button" id="btn-rupiah" class="toggle">Rp</button>
+                </div>
+
+                <label for="voucher">Voucher Tambahan (kalau ada bisa di isi yaa, Rp)</label>
+                <input type="number" id="voucher" placeholder="contoh: 10000">
+
+                <p id="pesan-error"></p>
+
+                <button type="button" id="btn-hitung">Hitung</button>
+                <button type="button" id="btn-reset">Reset</button>
+             </div>
+
+             <div id="struk"></div>
+        </section>
+
+        <section id="adu">
+            <h2>Adu Penawaran</h2>
+            <p>Perbandingan, mana ya yang lebih untung?</p>
+
+            <div class="kartu-adu-wrap">
+
+                <div class="kartu-adu" id="kartu-a">
+                    <h3>Penawaran A</h3>
+                    <label for="a-harga">Harga (Rp)</label>
+                    <input type="number" id="a-harga" placeholder="contoh: 200000">
+
+                    <label for="a-diskon">Diskon (%) / (Rp)</label>
+                    <div class="baris-diskon">
+                        <input type="number" id="a-diskon" placeholder="contoh: 30">
+                        <button type="button" class="toggle aktif" data-kartu="a" data-jenis="persen">%</button>
+                        <button type="button" class="toggle" data-kartu="a" data-jenis="rupiah">Rp</button>
+                    </div>
+                    
+                    <label for="a-voucher">Voucher (Rp)</label>
+                    <input type="number" id="a-voucher" placeholder="opsional">
+                    
+                    <div class="hasil-kartu" id="hasil-a"></div>
+                </div>
+
+                <div class="kartu-adu" id="kartu-b">
+                    <h3>Penawaran B</h3>
+                    <label for="b-harga">Harga (Rp)</label>
+                    <input type="number" id="b-harga" placeholder="contoh: 250000">
+
+                    <label for="b-diskon">Diskon (%) / (Rp)</label>
+                    <div class="baris-diskon">
+                        <input type="number" id="b-diskon" placeholder="contoh: 50000">
+                        <button type="button" class="toggle" data-kartu="b" data-jenis="persen">%</button>
+                        <button type="button" class="toggle aktif" data-kartu="b" data-jenis="rupiah">Rp</button>
+                    </div>
+
+                    <label for="b-voucher">Voucher (Rp)</label>
+                    <input type="number" id="b-voucher" placeholder="opsional">
+
+                    <div class="hasil-kartu" id="hasil-b"></div>
+                </div>
+
+            </div>
+            <div id="pemenang"></div>
+            <p id="pesan-adu"></p>
+            <button type="button" id="btn-adu">Mulai!</button>
+            <button type="button" id="btn-reset-adu">Reset</button>
+        </section>
+
+        <section id="tips">
+            <h2>Tips Hemat</h2>
+            <p>Kebiasaan kecil yang bikin dompet ngga BOROS.</p>
+
+            <div class="daftar-tips">
+
+                <article class="kartu-tips">
+                    <img src="images/celengan.jpg" alt="Celengan dan koin" loading="lazy">
+                    <div class="isi-tips">
+                        <h3>Sisihin dulu, baru jajan</h3>
+                        <p>Habis uang masuk, langsung sisihin sebagian ya buat ditabung. Sisanya baru deh dipakai buat jajan atau belanja yang lain.</p>
+                    </div>
+                </article>
+
+                <article class="kartu-tips">
+                    <div class="ikon-tips">🧮</div>
+                    <div class="isi-tips">
+                        <h3>Cek harga sebelum checkout</h3>
+                        <p>Diskon besar belum tentu paling murah. Coba deh bandingin harga akhirnya lewat fitur Adu Penawaran biar bisa dapet harga yang aman.</p>
+                    </div>
+                </article>
+
+                <article class="kartu-tips">
+                    <div class="ikon-tips">📝</div>
+                    <div class="isi-tips">
+                        <h3>Bikin daftar belanja</h3>
+                        <p>Belanja pakai daftar, bikin kita lebih terarah dan ngga gampang kalap/boros beli barang yang sebenernya ngga dibutuhin!</p>
+                    </div>
+                </article>
+
+                <article class="kartu-tips">
+                    <div class="ikon-tips">🎟️</div>
+                    <div class="isi-tips">
+                        <h3>Cek voucher dan promo</h3>
+                        <p>Voucher dari aplikasi kadang bisa digabung sama diskon toko. Jadii, cek dulu sebelum bayar biar makin hemat ya!</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="tentang">
+            <h2>Tentang Pembuat</h2>
+            <p>Haaloo holaa semua~ ^^</p>
+            <p>Website ini dibuat oleh Fitri, untuk final project Learning Labs.</p>
+        </section>
+     </main>
+    <!-- Footer -->
+     <footer>
+        <p>© 2026 HematGa · Dibuat oleh Fitri</p>
+     </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
