@@ -621,3 +621,77 @@ main > section.aktif {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Judul rata tengah */
+main > section > h1,
+main > section > h2,
+main > section > p {
+  text-align: center;
+}
+
+main > section > h1 {
+  margin-bottom: 4px;
+}
+
+/* Kartu tips flip*/
+.flip-kartu {
+  perspective: 1000px;
+  height: 270px;
+  cursor: pointer;
+}
+
+.flip-dalam {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-kartu.terbalik .flip-dalam {
+  transform: rotateY(180deg);
+}
+
+.sisi {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.depan {
+  background: var(--putih);
+}
+
+.depan img {
+  display: block;
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+}
+
+.depan h3 {
+  padding: 12px 16px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.belakang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--utama);
+  color: var(--putih);
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.flip-kartu:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 4px;
+  border-radius: 16px;
+}

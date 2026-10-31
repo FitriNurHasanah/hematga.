@@ -370,6 +370,15 @@ struk.addEventListener("click", function (e) {
   location.hash = "#adu";
 });
 
+// Enter untuk mulai adu
+document.querySelectorAll(".kartu-adu input").forEach(function (kolom) {
+  kolom.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      btnAdu.click();
+    }
+  });
+});
+
 // Reset adu
 document.getElementById("btn-reset-adu").addEventListener("click", function () {
   ["a", "b"].forEach(function (kode) {
@@ -421,3 +430,18 @@ function tampilkanHalaman() {
 }
 window.addEventListener("hashchange", tampilkanHalaman);
 tampilkanHalaman();
+
+// Kartu tips membalik
+document.querySelectorAll(".flip-kartu").forEach(function (kartu) {
+  kartu.addEventListener("click", function () {
+    kartu.classList.toggle("terbalik");
+  });
+
+  // Lewat keyboard (Enter / Spasi)
+  kartu.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      kartu.classList.toggle("terbalik");
+    }
+  });
+});
